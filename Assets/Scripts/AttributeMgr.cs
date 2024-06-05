@@ -6,53 +6,65 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class AttributeMgr : MonoBehaviour
+
+namespace attributeMgr
 {
-    public int health;
-    public int attack;
-    public bool player;
-    public bool playerWeapon;
-    public bool Invincible;
-    public GameObject[] certainDrops;
-    private int dropRadius = 10;
-    //public Vector3 origin = Vector3.zero; // for the random spawns
-
-
-
-    private void OnCollisionEnter(Collision collision)
+    public class AttributeMgr : MonoBehaviour
     {
-        var atm = collision.gameObject.GetComponent<AttributeMgr>();
-        if (atm != null)
+        public int health;
+        public int attack;
+        public bool player;
+        public bool playerWeapon;
+        public bool Invincible;
+        public GameObject[] certainDrops;
+        private int dropRadius = 10;
+        public int ammo;
+        //public Vector3 origin = Vector3.zero; // for the random spawns
+
+
+        public bool shootGun() 
         {
-            if (!playerWeapon || !atm.player)
+            if (ammo > 0) { ammo--; return true; }
+            else return false;
+        }
+
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            var atm = collision.gameObject.GetComponent<AttributeMgr>();
+            if (atm != null)
             {
-                if (!player)
+                if (!playerWeapon || !atm.player)
                 {
-                    if (!atm.Invincible) { atm.health -= attack; }
+                    if (!player)
+                    {
+                        if (!atm.Invincible) { atm.health -= attack; }
+                    }
                 }
             }
         }
-    }
 
-    private void Update()
-    {
-        if (health <= 0)
+        private void Update()
         {
-            if (player) { PlayerGameOver.gameOver(); }
-            else
+            if (health <= 0)
             {
-                for (int i = 0; i < certainDrops.Length; i++)
+                if (player) { PlayerGameOver.gameOver(); }
+                else
                 {
-                    //Vector3 randomPosition = origin + UnityEngine.Random.insideUnitSphere * dropRadius;
-                    Instantiate(certainDrops[i], transform.position, transform.rotation);
-                    Debug.LogWarning("well it tried to spawn smt");
+                    for (int i = 0; i < certainDrops.Length; i++)
+                    {
+                        //Vector3 randomPosition = origin + UnityEngine.Random.insideUnitSphere * dropRadius;
+                        Instantiate(certainDrops[i], transform.position, transform.rotation);
+                        Debug.LogWarning("well it tried to spawn smt");
+                    }
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
             }
         }
-    }
 
+    }
 }
+
 
 // mother made this
 // time to go do debugging

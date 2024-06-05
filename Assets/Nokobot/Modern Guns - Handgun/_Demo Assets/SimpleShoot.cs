@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using attributeMgr;
 
 [AddComponentMenu("Nokobot/Modern Guns/Simple Shoot")]
 public class SimpleShoot : MonoBehaviour
@@ -30,7 +31,10 @@ public class SimpleShoot : MonoBehaviour
             gunAnimator = GetComponentInChildren<Animator>();
     }
 
-    public void shootGun() { gunAnimator.SetTrigger("Fire"); }
+    public void shootGun(AttributeMgr attributeMgr) 
+    {
+        if (attributeMgr.shootGun()) { gunAnimator.SetTrigger("Fire"); }
+        }
 
 
     //This function creates the bullet behavior
