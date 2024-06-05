@@ -13,9 +13,11 @@ public class AttributeMgr : MonoBehaviour
     public bool player;
     public bool playerWeapon;
     public bool Invincible;
+    public GameObject[] certainDrops;
+    private int dropRadius = 10;
+    //public Vector3 origin = Vector3.zero; // for the random spawns
 
 
-    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,7 +39,16 @@ public class AttributeMgr : MonoBehaviour
         if (health <= 0)
         {
             if (player) { PlayerGameOver.gameOver(); }
-            else        { Destroy(gameObject);       }
+            else
+            {
+                for (int i = 0; i < certainDrops.Length; i++)
+                {
+                    //Vector3 randomPosition = origin + UnityEngine.Random.insideUnitSphere * dropRadius;
+                    Instantiate(certainDrops[i], transform.position, transform.rotation);
+                    Debug.LogWarning("well it tried to spawn smt");
+                }
+                Destroy(gameObject);
+            }
         }
     }
 
