@@ -33,8 +33,8 @@ public class SimpleShoot : MonoBehaviour
 
     public void shootGun(AttributeMgr attributeMgr) 
     {
-        if (attributeMgr.shootGun()) { gunAnimator.SetTrigger("Fire"); }
-        }
+        if (attributeMgr.ammoCheck()) { gunAnimator.SetTrigger("Fire"); }
+    }
 
 
     //This function creates the bullet behavior

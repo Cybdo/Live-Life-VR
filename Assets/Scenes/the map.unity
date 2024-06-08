@@ -8668,6 +8668,7 @@ MonoBehaviour:
   playerWeapon: 0
   Invincible: 0
   certainDrops: []
+  ammo: 0
 --- !u!64 &1370731526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9806,6 +9807,7 @@ MonoBehaviour:
   playerWeapon: 0
   Invincible: 0
   certainDrops: []
+  ammo: 5
 --- !u!114 &1548175208
 MonoBehaviour:
   m_ObjectHideFlags: 0

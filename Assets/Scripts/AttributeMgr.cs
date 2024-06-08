@@ -22,7 +22,7 @@ namespace attributeMgr
         //public Vector3 origin = Vector3.zero; // for the random spawns
 
 
-        public bool shootGun() 
+        public bool ammoCheck() 
         {
             if (ammo > 0) { ammo--; return true; }
             else return false;
