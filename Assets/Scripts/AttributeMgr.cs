@@ -2,36 +2,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+[Serializable]
+   public class StrRandomDrops
+    {
+        public GameObject obj;
+        public int dropRate;
+    }
+
 
 namespace attributeMgr
 {
+
+
+     
     public class AttributeMgr : MonoBehaviour
     {
+
         public int health;
         public int attack;
         public bool player;
         public bool playerWeapon;
         public bool Invincible;
-        public GameObject[] certainDrops;
-        private int dropRadius = 10;
+        public StrRandomDrops[] randomDrops;
+        //private int dropRadius = 10;
         public int ammo;
-        //public Vector3 origin = Vector3.zero; // for the random spawns
+        public int rewardAmmo;
+        public bool bullet;
+        public Vector3 origin;// = transform.position; // for the random spawns
 
 
-        public bool ammoCheck() 
+        public bool ammoCheck()
         {
             if (ammo > 0) { ammo--; return true; }
             else return false;
+            
         }
 
+        private void Start()
+        {
+            //if (bullet) { Debug.LogError("i am a bullet"); }
+        }
 
         private void OnCollisionEnter(Collision collision)
         {
             var atm = collision.gameObject.GetComponent<AttributeMgr>();
+            /*if (!bullet) */
+            //Debug.LogError($"{gameObject.name} collided with {health} health");
+            
             if (atm != null)
             {
                 if (!playerWeapon || !atm.player)
@@ -51,12 +73,16 @@ namespace attributeMgr
                 if (player) { PlayerGameOver.gameOver(); }
                 else
                 {
-                    for (int i = 0; i < certainDrops.Length; i++)
+                    origin = transform.position; 
+                    for (int i = 0; i < randomDrops.Length; i++)
                     {
-                        //Vector3 randomPosition = origin + UnityEngine.Random.insideUnitSphere * dropRadius;
-                        Instantiate(certainDrops[i], transform.position, transform.rotation);
-                        Debug.LogWarning("well it tried to spawn smt");
+                        Vector3 randomPosition = origin + UnityEngine.Random.insideUnitSphere;
+                        if (UnityEngine.Random.Range(1, 100) <= randomDrops[i].dropRate) { Instantiate(randomDrops[i].obj, randomPosition, Quaternion.identity); }
+                        Debug.LogWarning($"{randomDrops[i].obj.name} has {randomDrops[i].dropRate} of spawning");
                     }
+                    GameObject player = GameObject.Find("XR Origin (XR Rig)");
+                    AttributeMgr playerAttr = player.GetComponent<AttributeMgr>();
+                    playerAttr.ammo = playerAttr.ammo + rewardAmmo;
                     Destroy(gameObject);
                 }
             }

@@ -29,10 +29,15 @@ public class SimpleShoot : MonoBehaviour
 
         if (gunAnimator == null)
             gunAnimator = GetComponentInChildren<Animator>();
+       
+        //Debug.LogError(player.name);
     }
 
-    public void shootGun(AttributeMgr attributeMgr) 
+    public void shootGun()
     {
+
+        GameObject player = GameObject.Find("XR Origin (XR Rig)");
+        AttributeMgr attributeMgr = player.GetComponent<AttributeMgr>();
         if (attributeMgr.ammoCheck()) { gunAnimator.SetTrigger("Fire"); }
     }
 
