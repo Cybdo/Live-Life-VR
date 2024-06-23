@@ -25,7 +25,7 @@ public class PlayerTick : MonoBehaviour
                 {
                     ""name""    : ""cabin"",
                     ""x""        : 975,
-                    ""y""        : 125,
+                    ""y""        : 126,
                     ""z""        : 480
                 },
                 {
@@ -49,7 +49,7 @@ public class PlayerTick : MonoBehaviour
                 {
                     ""name""     : ""plane"",
                     ""x""        : 383,
-                    ""y""        : 161,
+                    ""y""        : 163,
                     ""z""        : 645
                 }
             ]";
