@@ -1,4 +1,4 @@
-Library: C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: C:\Users\cybdo\.UNITY\live-life-vr\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
 --target=ARMV8A_AARCH64
@@ -19,6 +19,7 @@ Library: C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlib
 --assembly-defines=Oculus.Interaction;
 --assembly-defines=Oculus.Interaction.OVR;
 --assembly-defines=Oculus.VR;
+--assembly-defines=sc.vegetationspawner.runtime;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
 --assembly-defines=System.Data;
@@ -45,11 +46,11 @@ Library: C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlib
 --assembly-defines=Unity.XR.Oculus;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\cybdo\.UNITY\main vr game thingy\Temp\Burst
+--temp-folder=C:\Users\cybdo\.UNITY\live-life-vr\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\cybdo\.UNITY\main vr game thingy\Library\Burst
---output=C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+--decode-folder=C:\Users\cybdo\.UNITY\live-life-vr\Library\Burst
+--output=C:\Users\cybdo\.UNITY\live-life-vr\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -72,6 +73,7 @@ Library: C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlib
 --assembly-defines=Oculus.Interaction;
 --assembly-defines=Oculus.Interaction.OVR;
 --assembly-defines=Oculus.VR;
+--assembly-defines=sc.vegetationspawner.runtime;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
 --assembly-defines=System.Data;
@@ -98,11 +100,11 @@ Library: C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlib
 --assembly-defines=Unity.XR.Oculus;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\cybdo\.UNITY\main vr game thingy\Temp\Burst
+--temp-folder=C:\Users\cybdo\.UNITY\live-life-vr\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\cybdo\.UNITY\main vr game thingy\Library\Burst
---output=C:\Users\cybdo\.UNITY\main vr game thingy\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+--decode-folder=C:\Users\cybdo\.UNITY\live-life-vr\Library\Burst
+--output=C:\Users\cybdo\.UNITY\live-life-vr\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ProjectOnPlane(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--1819bc9925667b008fd6c3e6019ccf71

@@ -93,7 +93,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3531813955593663259, guid: 9e0ef2cf9cfc11c46bbe7f28b272f6fb, type: 3}
       propertyPath: health
-      value: 100000
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531813955593663259, guid: 9e0ef2cf9cfc11c46bbe7f28b272f6fb, type: 3}
+      propertyPath: Invincible
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3625037896966406280, guid: 9e0ef2cf9cfc11c46bbe7f28b272f6fb, type: 3}
       propertyPath: m_Name
